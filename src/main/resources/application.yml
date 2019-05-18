@@ -1,0 +1,21 @@
+spring:
+  datasource: #主数据源
+    url: jdbc:mariadb://localhost:3306/primarydb?useUnicode=true&characterEncoding=UTF-8
+    name:  primarydb  #数据源名字
+    username: root
+    password:
+    driver-class-name: org.mariadb.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+
+  datasource2: #第二数据源
+    url: jdbc:mariadb://localhost:3306/secondarydb?useUnicode=true&characterEncoding=UTF-8
+    name:  secondarydb  # 第二 数据源名字
+    username: root
+    password:
+    driver-class-name: org.mariadb.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
