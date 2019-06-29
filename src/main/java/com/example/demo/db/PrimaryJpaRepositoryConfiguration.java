@@ -13,18 +13,14 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
 import javax.sql.DataSource;
 
 @Configuration
-@EnableConfigurationProperties({JpaProperties.class,HibernateProperties.class})
+@EnableConfigurationProperties({JpaProperties.class, HibernateProperties.class})
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "primaryEntityManagerFactory", transactionManagerRef = "primaryTransactionManager",
         basePackages = {"com.example.demo.repository.primary"})

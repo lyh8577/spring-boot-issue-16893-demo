@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -21,7 +20,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableConfigurationProperties({JpaProperties.class, HibernateProperties.class})
-@EnableTransactionManagement //启用事物
+@EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "secondaryEntityManagerFactory", transactionManagerRef = "secondaryTransactionManager",
         basePackages = {"com.example.demo.repository.secondary"})
 public class SecondaryJpaRepositoryConfiguration {
